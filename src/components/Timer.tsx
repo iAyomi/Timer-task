@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Buttons from "./Buttons";
+import DisplayBox from "./DisplayBox";
 
 const Timer = () => {
   const [minutes, setMinutes] = useState(0);
@@ -50,55 +52,15 @@ const Timer = () => {
     <div>
       <div className="flex items-center justify-center gap-x-5 text-9xl">
         <div className="flex items-center justify-center gap-x-5">
-          <div className="text-8xl flex flex-col items-center gap-y-5">
-            <button
-              type="button"
-              onClick={increaseMinute}
-              className="cursor-pointer"
-            >
-              🔼
-            </button>
-            <button
-              type="button"
-              onClick={decreaseMinute}
-              className="cursor-pointer"
-            >
-              🔽
-            </button>
-          </div>
-          <div className="flex flex-col items-center gap-y-5">
-            <div className="p-5 border-3 border-gray-300 rounded-2xl">
-              {minutes == 0 ? "00" : minutes < 10 ? `0${minutes}` : minutes}
-            </div>
-            <p className="text-2xl font-semibold">Minutes</p>
-          </div>
+          <Buttons increase={increaseMinute} decrease={decreaseMinute} />
+          <DisplayBox content={minutes} text="Minutes" />
         </div>
 
         <div className="relative bottom-6">:</div>
 
         <div className="flex items-center justify-center gap-x-5">
-          <div className="flex flex-col items-center gap-y-5">
-            <div className="p-5 border-3 border-gray-300 rounded-2xl">
-              {seconds == 0 ? "00" : seconds < 10 ? `0${seconds}` : seconds}
-            </div>
-            <p className="text-2xl font-semibold">Seconds</p>
-          </div>
-          <div className="text-8xl flex flex-col items-center gap-y-5">
-            <button
-              type="button"
-              onClick={increaseSecond}
-              className="cursor-pointer"
-            >
-              🔼
-            </button>
-            <button
-              type="button"
-              onClick={decreaseSecond}
-              className="cursor-pointer"
-            >
-              🔽
-            </button>
-          </div>
+          <DisplayBox content={seconds} text="Seconds" />
+          <Buttons increase={increaseSecond} decrease={decreaseSecond} />
         </div>
       </div>
     </div>
