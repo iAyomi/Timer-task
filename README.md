@@ -1,5 +1,11 @@
 # 🔗 Timer
 
+This is a mini-timer application built during a live coding session in 30 minutes. Interviwers were quite impressed with how quickly I designed the timer interface.
+
+![URL Shortener Preview](./assets/Preview1.png)
+
+![URL Shortener Preview](./assets/Preview2.png)
+
 ---
 
 ## 🚀 Getting Started
